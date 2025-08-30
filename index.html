@@ -3,13 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador Cafetería</title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Beanywood Café</title>
 </head>
 <body>
-    <section class="About">
-        <h1>Simulador de pedido de cafetería</h1>
-        <p>La idea de este simulador es que el usuario pueda elegir una o más opciones de cafés, y que también pueda (si quiere) pedir comida para acompañar su café</p>
+    <h1>Bienvenido a Beanywood</h1>
+    <h2>Disfrutá del mejor café en tu momento del día preferido</h2>
+    <section>
+        <h3>Listado de cafés</h3>
+        <table id="coffeeList">
+            <tr>
+                <th>Producto</th>
+                <th>Precio </th>
+            </tr>
+        </table>
+    </section>    
+    <section>
+        <h3>Listado de comidas</h3>
+        <table id="foodList">
+            <tr>
+                <th>Producto</th>
+                <th>Precio </th>
+            </tr>
+        </table>
     </section>
+    <br>
+    <br>
+    <section>
+        <form id="productForm">
+            <label>Ingresá el producto que querés comprar</label>
+            <input type="text" id="orderedProduct">
+            <br>
+            <br>
+            <button type="submit">Agregar al carrito</button>
+        </form>
+        <br>
+        <div id="productsContainer">
+        </div>
+    </section>
+    <script src="./app.js"></script>
 </body>
-<script src="./app.js"></script>
 </html>

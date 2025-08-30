@@ -1,146 +1,152 @@
-// <-------Carga de stock de productos------->
+//VARIABLES
+let coffeeMenu = [];
 
-const menuCafes = [];
+let foodMenu = [];
 
-const agregarStockCafes = (nombre, precio) => {
-    menuCafes.push ({
-        nombre: nombre,
-        precio: precio,
+let lastId = 1;
+
+let cart = [];
+
+//LLAMADO/CREACIÓN DE ELEMENTOS DEL DOM
+const coffeeList = document.getElementById("coffeeList");
+
+const foodList = document.getElementById("foodList");
+
+const productForm = document.getElementById("productForm");
+
+const productsContainer = document.getElementById("productsContainer");
+
+const cartSummaryText = document.createElement("p");
+productsContainer.appendChild(cartSummaryText);
+
+const productsOrderedInfo = document.createElement("div");
+productsContainer.appendChild(productsOrderedInfo);
+
+const finishOrderButton = document.createElement("button");
+
+//FUNCIONES PARA AGREGAR AL MENÚ
+const addProductsToMenu = (productName, productPrice, menu) => {
+    menu.push ({
+        productName: productName,
+        productPrice: productPrice,
     });
-};
-
-agregarStockCafes("Caramel macchiato", 4500);
-agregarStockCafes("Vainilla Latte", 3500);
-agregarStockCafes("Capuchino", 5000);
-agregarStockCafes("Café con leche", 3000);
-
-console.log(menuCafes);
-
-const menuComidas = [];
-
-const agregarStockComida = (nombre, precio) => {
-    menuComidas.push ({
-        nombre: nombre,
-        precio: precio,
-    });
-};
-
-agregarStockComida("Medialuna", 3000);
-agregarStockComida("Tostada con palta y huevo", 7000);
-agregarStockComida("Tostada con huevo y tomatitos cherry", 7500);
-agregarStockComida("Scon de queso", 5000);
-
-console.log(menuComidas);
-
-// <-------Mostrar listados------->
-
-const mostrarListadoCafes = () => {
-    let listadoCafes = `Menú de cafés\n`;
-
-    for (let i=0; i < menuCafes.length; i++) {
-    listadoCafes += `
-    - ${menuCafes[i].nombre}
-    - Precio: $${menuCafes[i].precio}
-    `
-    }
-    return alert(listadoCafes);
-};
-
-const mostrarListadoComidas = () => {
-    let listadoComidas = `Menú de comidas\n`;
-
-    for (let i=0; i < menuComidas.length; i++) {
-    listadoComidas += `
-    - ${menuComidas[i].nombre}
-    - Precio: $${menuComidas[i].precio}
-    `
-    }
-    return alert(listadoComidas);
-};
-
-// <------Elección y carga de pedidos------->
-
-let eleccionCafe = [];
-
-do {
-    mostrarListadoCafes();
-    let cafe = prompt("Ingresá el café que querés pedir");
-    if (cafe) {
-        eleccionCafe.push({
-            nombre: cafe,
-        });
-    } else {
-        break;
-    }
-} while (confirm("¿Querés agregar otro café?"));
-
-let consultaComida = confirm("¿Querés agregar algo para comer?");
-
-const pedidoSoloCafe = () => {
-    let mensajePedidoCafe = `Detalle de tu pedido:\n\n`;
-    let totalPagoCafe = 0;
-
-    for (i = 0; i < menuCafes.length; i++) {
-        for (j = 0; j < eleccionCafe.length; j++) {
-            if (menuCafes[i].nombre === eleccionCafe[j].nombre) {
-                totalPagoCafe += menuCafes[i].precio;
-                mensajePedidoCafe += `- Productos pedidos: ${menuCafes[i].nombre}\n`;
-                mensajePedidoCafe += `- Precio: $${menuCafes[i].precio}\n\n`;
-            }
-        }
-    }
-    return alert(mensajePedidoCafe += `- Total a pagar: $${totalPagoCafe}`);
 }
 
-let eleccionComida = [];
+addProductsToMenu("Vainilla Latte", 2500, coffeeMenu);
+addProductsToMenu("Caramel Macchiato", 3000, coffeeMenu);
+addProductsToMenu("Café con leche", 2000, coffeeMenu);
 
-if (consultaComida === true) {
-    do {
-        mostrarListadoComidas();
-        let comida = prompt("Ingresá la comida que querés pedir");
-        if (comida) {
-            eleccionComida.push({
-                nombre: comida,
-            })
-        } else {
-            pedidoSoloCafe();
-        }
-    } while (confirm("¿Querés agregar más comida?"));
+addProductsToMenu("Medialuna de manteca", 3500, foodMenu);
+addProductsToMenu("Tostada con palta y huevo", 6000, foodMenu);
+addProductsToMenu("Porción de torta de zanahoria", 5000, foodMenu);
+
+//FUNCIONES DEL CARRITO
+const addItemToCart = (name, price) => {
+    cart.push({
+        id: lastId++,
+        name: name,
+        price: price,
+    })
 }
 
-const obtenerPedido = (menu, eleccion) => {
-    let eleccionFinal = [];
+const addToCart = (item) => {
+    let correctInput;
+
+    const cleanInput = (input) =>
+        input
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");    
     
-    for (i = 0; i < menu.length; i++) {
-        for (j = 0; j < eleccion.length; j++) {
-            if (menu[i].nombre === eleccion[j].nombre) {
-                eleccionFinal.push ({
-                    nombre: menu[i].nombre,
-                    precio: menu[i].precio,
-                })   
-            }
+    coffeeMenu.forEach((coffeeItem) => {
+        if (cleanInput(coffeeItem.productName) === cleanInput(item)) {
+            correctInput = coffeeItem;
         }
+    })
+    foodMenu.forEach((foodItem) => {
+        if (cleanInput(foodItem.productName) === cleanInput(item)) {
+            correctInput = foodItem;
+        }
+    })
+    if (correctInput) {
+        addItemToCart(correctInput.productName, correctInput.productPrice);
+        localStorage.setItem("Carrito", JSON.stringify(cart));
+    } else {
+        alert("Por favor, ingresá un producto válido");
     }
-    return eleccionFinal;
+    return 
 }
 
-let pedidoCafe = obtenerPedido(menuCafes, eleccionCafe);
+const deleteProduct = (id) => {
+    cart = cart.filter((item) => item.id !== id);
+    localStorage.setItem("Carrito", JSON.stringify(cart));
+    renderCart();
+};
 
-let pedidoComida = obtenerPedido(menuComidas, eleccionComida);
+const totalOrder = () => {
+    const total = cart.reduce((acumulador, cartItem) => acumulador + cartItem.price, 0);
+    return total;
+};
 
-let pedidoTotal = [...pedidoCafe, ...pedidoComida];
-
-const mensajeFinal = () => {
-    let mensaje = `Detalle de tu pedido:\n\n`;
-
-    let total = 0;
-
-    for (let i = 0; i < pedidoTotal.length; i++) {
-        total += pedidoTotal[i].precio;
-        mensaje += `- Productos pedidos: ${pedidoTotal[i].nombre}\n`;
-        mensaje += `- Precio: $${pedidoTotal[i].precio}\n\n`;
-    }
-    return alert(mensaje += `- Total a pagar: $${total}`);
+//FUNCIONES DE RENDERIZADO
+const showProductsInMenu = (menu, productsList) => {
+    menu.forEach((menuItem) => {
+        const newRow = document.createElement("tr");
+        productsList.appendChild(newRow);
+        const newCell1 = document.createElement("td");
+        const newCell2 = document.createElement("td");
+        newCell1.textContent = `${menuItem.productName}`
+        newCell2.textContent = `$${menuItem.productPrice}`
+        productsList.appendChild(newCell1);
+        productsList.appendChild(newCell2);
+    });
 }
 
-mensajeFinal();
+const showCartSummaryText = () => {
+    if(cart) {
+        cartSummaryText.innerHTML = "Productos agregados al carrito";
+    }
+}
+
+const renderCart = () => {
+    productsOrderedInfo.innerHTML = "";
+    cart.forEach((cartItem) => {
+        const newAddedItem = document.createElement("div");
+        newAddedItem.innerHTML = `Producto: <strong>${cartItem.name}</strong> - Precio: <strong>$${cartItem.price}</strong>\n`;
+        productsOrderedInfo.appendChild(newAddedItem);
+
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Eliminar";
+        deleteButton.addEventListener("click", () => deleteProduct(cartItem.id));
+        newAddedItem.appendChild(deleteButton);
+    });
+    const showTotalOrder = document.createElement("p");
+    showTotalOrder.innerHTML = `El total de tu pedido es de: <strong>$${totalOrder()}</strong>`;
+    productsOrderedInfo.appendChild(showTotalOrder);
+};
+
+const showFinishOrderButton = () => {
+    if (cart) {
+        finishOrderButton.textContent = "Finalizar compra";
+        productsContainer.appendChild(finishOrderButton);
+        finishOrderButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        window.location.href = "./pages/order.html";
+        });
+    }
+};
+
+//EVENTOS
+productForm.addEventListener("submit",function(event){
+    const orderedProduct = document.getElementById("orderedProduct").value;
+    event.preventDefault();
+    addToCart(orderedProduct);
+    showCartSummaryText();
+    renderCart();   
+    showFinishOrderButton();
+    productForm.reset();
+});
+
+//INICIALIZACIÓN
+showProductsInMenu(coffeeMenu, coffeeList);
+showProductsInMenu(foodMenu, foodList);
