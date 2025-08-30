@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'lato';
+}
+
+h1 {
+    color: #300c09;
+    background-color: #fffaed;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #300c09;
+}
+
+/* INDEX */
+.coffeeProducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coffeeProducts h3 {
+    color: #753f37;
+    margin: 20px;
+}
+
+#coffeeList {
+    color: #fffaed;
+    background-color: #753f37;
+    width: 20%;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+.foodProducts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.foodProducts h3 {
+    color: #753f37;
+    margin: 20px;   
+}
+
+#foodList {
+    color: #fffaed;
+    background-color: #753f37;
+    width: 20%;
+    margin: 20px 0;
+    padding: 15px;
+}
+
+#newCell1 {
+    text-align: left;
+    justify-content: center;
+}
+
+#newCell2 {
+    text-align: left;
+    align-content: center;
+}
+
+#productForm {
+    background-color: #fffaed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+#productForm label {
+    color: #300c09;
+    margin: 10px;
+}
+
+#productForm input {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+}
+
+#productForm button {
+    color: #fffaed;
+    background-color: #300c09;
+    padding: 10px 15px;
+    border-style: none;
+    border-radius: 0.6em;
+}
+
+.cart{
+    color: #300c09;
+    background-color: #fffaed;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+#cartSummaryText {
+    font-size: 18px;
+    padding: 5px 0;
+    margin: 5px 0;
+}
+
+#productsOrderedInfo {
+    margin: 10px 0;
+}
+
+#newAddedItem {
+    padding: 10px 0;
+}
+
+#showTotalOrder {
+    padding: 10px 0;
+}
+
+#finishOrderButton {
+    color: #fffaed;
+    background-color: #300c09;
+    padding: 10px 15px;
+    border-style: none;
+    border-radius: 0.6em;
+    margin: 15px 0;
+}
+
+#deleteButton {
+    color: #fffaed;
+    background-color: #753f37;
+    padding: 10px 15px;
+    border-style: none;
+    border-radius: 0.6em;
+    margin: 0 10px;
+}
+
+/* ORDER */
+.orderDetail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 20px;
+}
+
+.orderDetail p {
+    font-weight: bold;
+    color: #300c09;
+    font-size: 20px;
+    padding: 5px 0;
+}
+
+#finalOrder {
+    color: #300c09;
+}
+
+#orderedItems {
+    padding: 10px 0;
+}
+
+#totalPaid {
+    font-size: 16px;
+}
+
+#backToHomepage {
+    color: #fffaed;
+    background-color: #300c09;
+    padding: 10px 15px;
+    border-style: none;
+    border-radius: 0.6em;
+    margin: 15px 0;
+}

@@ -17,12 +17,15 @@ const productForm = document.getElementById("productForm");
 const productsContainer = document.getElementById("productsContainer");
 
 const cartSummaryText = document.createElement("p");
+cartSummaryText.id = 'cartSummaryText';
 productsContainer.appendChild(cartSummaryText);
 
 const productsOrderedInfo = document.createElement("div");
+productsOrderedInfo.id = "productsOrderedInfo";
 productsContainer.appendChild(productsOrderedInfo);
 
 const finishOrderButton = document.createElement("button");
+finishOrderButton.id = "finishOrderButton";
 
 //FUNCIONES PARA AGREGAR AL MENÚ
 const addProductsToMenu = (productName, productPrice, menu) => {
@@ -94,7 +97,9 @@ const showProductsInMenu = (menu, productsList) => {
         const newRow = document.createElement("tr");
         productsList.appendChild(newRow);
         const newCell1 = document.createElement("td");
+        newCell1.id = "newCell1";
         const newCell2 = document.createElement("td");
+        newCell2.id = "newCell2";
         newCell1.textContent = `${menuItem.productName}`
         newCell2.textContent = `$${menuItem.productPrice}`
         productsList.appendChild(newCell1);
@@ -112,15 +117,18 @@ const renderCart = () => {
     productsOrderedInfo.innerHTML = "";
     cart.forEach((cartItem) => {
         const newAddedItem = document.createElement("div");
+        newAddedItem.id = "newAddedItem";
         newAddedItem.innerHTML = `Producto: <strong>${cartItem.name}</strong> - Precio: <strong>$${cartItem.price}</strong>\n`;
         productsOrderedInfo.appendChild(newAddedItem);
 
         const deleteButton = document.createElement("button");
+        deleteButton.id = "deleteButton";
         deleteButton.textContent = "Eliminar";
         deleteButton.addEventListener("click", () => deleteProduct(cartItem.id));
         newAddedItem.appendChild(deleteButton);
     });
     const showTotalOrder = document.createElement("p");
+    showTotalOrder.id = "showTotalOrder";
     showTotalOrder.innerHTML = `El total de tu pedido es de: <strong>$${totalOrder()}</strong>`;
     productsOrderedInfo.appendChild(showTotalOrder);
 };

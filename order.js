@@ -16,10 +16,12 @@ const totalOrder = () => {
 const showFinalOrder = () => {
     finalCart.forEach((cartItem) => {
         const orderedItems = document.createElement("div");
+        orderedItems.id = "orderedItems";
         orderedItems.innerHTML = `Producto: <strong>${cartItem.name}</strong> - Precio: <strong>$${cartItem.price}</strong>\n`;
         finalOrder.appendChild(orderedItems);
     });
     const totalPaid = document.createElement("p");
+    totalPaid.id = "totalPaid";
     totalPaid.innerHTML = `Pago total: <strong>$${totalOrder()}</strong>`;
     finalOrder.appendChild(totalPaid);
 }

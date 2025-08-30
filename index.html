@@ -9,7 +9,7 @@
 <body>
     <h1>Bienvenido a Beanywood</h1>
     <h2>Disfrutá del mejor café en tu momento del día preferido</h2>
-    <section>
+    <section class="coffeeProducts">
         <h3>Listado de cafés</h3>
         <table id="coffeeList">
             <tr>
@@ -18,7 +18,7 @@
             </tr>
         </table>
     </section>    
-    <section>
+    <section class="foodProducts">
         <h3>Listado de comidas</h3>
         <table id="foodList">
             <tr>
@@ -27,17 +27,14 @@
             </tr>
         </table>
     </section>
-    <br>
-    <br>
-    <section>
+    <section class="orderForm">
         <form id="productForm">
             <label>Ingresá el producto que querés comprar</label>
             <input type="text" id="orderedProduct">
-            <br>
-            <br>
             <button type="submit">Agregar al carrito</button>
         </form>
-        <br>
+    </section>
+    <section class="cart">
         <div id="productsContainer">
         </div>
     </section>
