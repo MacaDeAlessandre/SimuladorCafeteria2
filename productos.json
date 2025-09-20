@@ -1,0 +1,54 @@
+{
+    "coffees": [
+        {
+            "id": 1,
+            "name": "Vainilla Latte",
+            "price": 2500,
+            "image": "./assets/vainilla-latte.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Caramel Macchiato",
+            "price": 3000,
+            "image": "./assets/caramel-macchiato.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Café con leche",
+            "price": 2000,
+            "image": "./assets/cafe-con-leche.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Capuccino",
+            "price": 2500,
+            "image": "./assets/capuccino.jpg"
+        }
+    ],
+    "food": [
+        {
+            "id": 5,
+            "name": "Muffin de arándanos",
+            "price": 4500,
+            "image": "./assets/muffin.jpg"
+        },
+        {
+            "id": 6,
+            "name": "Croissant",
+            "price": 3500,
+            "image": "./assets/croissant.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Tostada con palta y huevo",
+            "price": 6000,
+            "image": "./assets/tostadas.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Porción de torta de zanahoria",
+            "price": 5000,
+            "image": "./assets/torta.jpg"
+        }
+    ]
+}

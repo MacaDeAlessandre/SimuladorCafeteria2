@@ -14,14 +14,20 @@ h1 {
     color: #300c09;
     background-color: #fffaed;
     text-align: center;
-    padding: 15px;
-    margin-bottom: 30px;
+    padding: 20px;
+    margin-bottom: 42px;
 }
 
 h2 {
     color: #300c09;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 42px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #753f37;
+    margin-bottom: 38px;
 }
 
 /* INDEX */
@@ -29,78 +35,79 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.coffeeProducts h3 {
-    color: #753f37;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
 }
 
 #coffeeList {
     color: #fffaed;
-    background-color: #753f37;
-    width: 20%;
-    margin-bottom: 40px;
-    padding: 15px;
-    border-radius: 0.3em;
+    display: flex;
+    margin-bottom: 15px;
 }
 
 .foodProducts {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.foodProducts h3 {
-    color: #753f37;
-    margin-bottom: 8px;
+    margin-bottom: 25px;    
 }
 
 #foodList {
     color: #fffaed;
-    background-color: #753f37;
-    width: 20%;
-    margin-bottom: 40px;
-    padding: 15px;
-    border-radius: 0.3em;
+    display: flex;
+    margin-bottom: 15px;
 }
 
-#newCell1 {
-    text-align: left;
-    justify-content: center;
-}
-
-#newCell2 {
-    text-align: left;
-    align-content: center;
-}
-
-#productForm {
-    background-color: #fffaed;
+.productCard {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center;    
+    padding: 0 60px;
+}
+
+.productInfo {
+    overflow: hidden;
+    width: 280px;
+    margin-bottom: 25px;
+    border-radius: 0.7em;
+}
+
+.productImage {
+    width: 280px;
+    display: block;
+}
+
+.infoProduct {
+    background-color: #753f37;
+    /* max-width: 200px; */
     padding: 20px;
-    margin-bottom: 10px;
 }
 
-#productForm label {
-    color: #300c09;
-    margin: 10px;
+.infoProduct h4 {
+    padding: 7px;
 }
 
-#productForm input {
-    width: 200px;
-    height: 30px;
-    margin: 10px;
+.productPrice {
+    padding: 7px;
 }
 
-#productForm button {
+.btnAddToCart {
     color: #fffaed;
-    background-color: #300c09;
+    background-color: #753f37;
+    width: 150px;
     padding: 10px 15px;
     border-style: none;
     border-radius: 0.6em;
+    margin-bottom: 35px;    
+}
+
+.btnAddToCart:hover {
+    background-color: #300c09;
+}
+
+.errorMessage {
+    color: black;
+    font-style: italic;
+    margin-bottom: 15px;
 }
 
 .cart{
@@ -112,6 +119,7 @@ h2 {
 
 #cartSummaryText {
     font-size: 18px;
+    font-weight: bold;
     padding: 5px 0;
     margin: 5px 0;
 }
