@@ -19,10 +19,10 @@ const calculateTotalOrder = () => {
 // FUNCIONES DE CREACIÓN DE ELEMENTOS DEL DOM
 // Crea y muestra cada producto de la orden de manera individual
 const purchasedItem = (item) => {
-        const orderedItems = document.createElement("div");
-        orderedItems.id = "orderedItems";
-        orderedItems.innerHTML = `Producto: <strong>${item.name}</strong> - Precio: <strong>$${item.price}</strong>\n`;
-        finalOrder.appendChild(orderedItems);
+    const orderedItems = document.createElement("div");
+    orderedItems.id = "orderedItems";
+    orderedItems.innerHTML = `Producto: <strong>${item.name}</strong> - Precio: <strong>$${item.price}</strong>\n`;
+    finalOrder.appendChild(orderedItems);
 }
 
 // Crea y muestra el total pagado por todos los productos del carrito

@@ -148,35 +148,35 @@ const calculateTotalOrder = () => {
 // FUNCIONES DE CREACIÓN DE ELEMENTOS DEL DOM
 // Crea las cards para los productos obtenidos de la API, y añade el botón para agregarlos al carrito
 const createProductCard = (item, list) => {
-        const productCard = document.createElement("div");
-        productCard.className = "productCard";
-        list.appendChild(productCard);
-        const productInfo = document.createElement("div");
-        productInfo.className = "productInfo";
-        productInfo.innerHTML = `
-            <img src="${item.image}" alt="${item.name}" class="productImage">
-        `;
-        productCard.appendChild(productInfo);
-        const infoProduct = document.createElement("div");
-        infoProduct.className = "infoProduct";
-        infoProduct.innerHTML = `
-            <h4>${item.name}</h4>
-            <p class="productPrice">$${item.price}</p>
-        `;
-        productInfo.appendChild(infoProduct);
-        createBtnAddToCart(item, productCard);
+    const productCard = document.createElement("div");
+    productCard.className = "productCard";
+    list.appendChild(productCard);
+    const productInfo = document.createElement("div");
+    productInfo.className = "productInfo";
+    productInfo.innerHTML = `
+        <img src="${item.image}" alt="${item.name}" class="productImage">
+    `;
+    productCard.appendChild(productInfo);
+    const infoProduct = document.createElement("div");
+    infoProduct.className = "infoProduct";
+    infoProduct.innerHTML = `
+        <h4>${item.name}</h4>
+        <p class="productPrice">$${item.price}</p>
+    `;
+    productInfo.appendChild(infoProduct);
+    createBtnAddToCart(item, productCard);
 }
 
 // Crea un botón para añadir un producto al carrito
 const createBtnAddToCart = (item, card) => {
-        const btnAddToCart = document.createElement("button");
-        btnAddToCart.className = "btnAddToCart";
-        btnAddToCart.innerHTML = `
-            Agregar al carrito
-        `;
-        card.appendChild(btnAddToCart);
-        btnAddToCart.addEventListener("click", function () {
-            addToCart(item.name, item.price)
+    const btnAddToCart = document.createElement("button");
+    btnAddToCart.className = "btnAddToCart";
+    btnAddToCart.innerHTML = `
+        Agregar al carrito
+    `;
+    card.appendChild(btnAddToCart);
+    btnAddToCart.addEventListener("click", function () {
+        addToCart(item.name, item.price)
     });
 }
 
@@ -214,10 +214,10 @@ const createProductElement = (menu, productsList) => {
 
 // Crea un mensaje de error en caso de que la request a la API falle
 function showErrorMessage(menu) {
-        const errorMessage = document.createElement("p");
-        errorMessage.className = "errorMessage";
-        errorMessage.innerHTML = `No se ha podido cargar la información del producto. Vuelva a intentarlo más tarde.`;
-        menu.appendChild(errorMessage); 
+    const errorMessage = document.createElement("p");
+    errorMessage.className = "errorMessage";
+    errorMessage.innerHTML = `No se ha podido cargar la información del producto. Vuelva a intentarlo más tarde.`;
+    menu.appendChild(errorMessage);     
 }
 
 // Muestra la sección de los productos agregados al carrito al agregar al menos un producto a éste
