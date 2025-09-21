@@ -49,9 +49,12 @@ Para ejecutar el proyecto localmente:
 ```bash
 # Clonar el repositorio
 git clone <https://github.com/MacaDeAlessandre/SimuladorCafeteria2.git>
+```
 
 # Entrar en la carpeta del proyecto
+```
 cd beanywood-cafe
+```
 
 > ⚠️ Nota: Todas las librerías utilizadas (como SweetAlert2) se cargan desde CDN, por lo que **no es necesario ejecutar `npm install`** para usar el proyecto.
 
