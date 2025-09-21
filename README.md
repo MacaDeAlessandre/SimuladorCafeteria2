@@ -1,6 +1,6 @@
-# ☕ Beanywood Café - Simulador de Pedidos Online
+# ☕ Beanywood Café - Simulador de Pedidos Online de Cafetería
 
-Proyecto final del curso **Javascript en Coderhouse** 🧑‍💻.  
+Proyecto final del curso **Javascript en Coderhouse** 👩🏻‍💻.  
 
 **Beanywood Café** es un **simulador de pedidos online de cafetería** que permite a los usuarios seleccionar productos del menú, agregarlos a un carrito y ver un resumen de su compra de manera interactiva.  
 
@@ -48,7 +48,7 @@ Para ejecutar el proyecto localmente:
 
 ```bash
 # Clonar el repositorio
-git clone <URL_DEL_REPOSITORIO>
+git clone <https://github.com/MacaDeAlessandre/SimuladorCafeteria2.git>
 
 # Entrar en la carpeta del proyecto
 cd beanywood-cafe
@@ -75,7 +75,7 @@ Podés ver una **demo funcional del proyecto** en:
 
 ---
 
-## 🙋‍♀️ Autora
+## 🙋🏻‍♀️ Autora
 
 **Macarena De Alessandre**  
 Proyecto final del curso **Javascript en Coderhouse** – 2025
