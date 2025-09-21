@@ -1,66 +1,81 @@
 # ☕ Beanywood Café - Simulador de Pedidos Online
 
-Este es un proyecto realizado para la segunda pre-entrega del curso **Javascript en Coderhouse** 🧑‍💻.
+Proyecto final del curso **Javascript en Coderhouse** 🧑‍💻.  
+
+**Beanywood Café** es un **simulador de pedidos online de cafetería** que permite a los usuarios seleccionar productos del menú, agregarlos a un carrito y ver un resumen de su compra de manera interactiva.  
 
 ---
 
-## 📌 Descripción
+## 📌 Características principales
 
-Este proyecto es un **simulador de cafetería online** en el que el usuario puede:  
-
-- Ver el **menú de cafés** y el **menú de comidas**.  
-- Ingresar productos en un carrito de compras.  
-- Visualizar el **detalle de su pedido** y el **total acumulado**.  
-- Finalizar el pedido (simulado) para ver la **orden completa**.
-
-> ⚠️ Este flujo es **simulado**: el usuario no ingresa datos personales, ni dirección, ni hay integración con métodos de pago. La idea es practicar la **interacción con el DOM y manejo de datos en JavaScript**.
-
----
-
-## 🧱 Estructura del sitio
-
-El sitio está compuesto por **2 páginas**:
-
-- 🏠 `index.html` → Página principal con el menú y el carrito de pedidos.  
-- 🧾 `order.html` → Página de resumen de la orden final.  
-
-El flujo principal consiste en **seleccionar productos, agregarlos al carrito y ver el detalle actualizado del pedido**.  
+- Visualización del **menú de cafés** y **de comidas**.  
+- **Agregar productos** al carrito y eliminarlos del mismo.  
+- Visualización en tiempo real del **detalle del pedido** y **total acumulado**.  
+- **Finalizar compra** (simulada) y mostrar la orden de compra completa en una página de resumen.  
+- Uso de **notificaciones interactivas**.  
+- Experiencia **100% desarrollada por mí**, incluyendo todos los estilos CSS. 
 
 ---
 
 ## 🧰 Tecnologías utilizadas
 
-- HTML
-- CSS 
-- JavaScript
-- LocalStorage
-- Git & GitHub  
-- Visual Studio Code  
+- **Vanilla JavaScript**  
+- **HTML5 & CSS** para estructura y estilos  
+- **LocalStorage** para guardar el carrito de forma temporal  
+- **Git & GitHub** para control de versiones  
 
 ---
 
-## 📁 Organización del repositorio
+## 📚 Librerías
 
-- 📄 `index.html` → Página principal con menú y carrito  
-- 📄 `order.html` → Página de orden final  
-- 📂 `css` → Estilos del proyecto (aún falta agregar los estilos finales) 
-- 📄 `app.js` → Archivo de JavaScript que interactúa con el Index
-- 📄 `order.js` → Archivo de JavaScript que interactúa con la página "Order"
+- **SweetAlert2** → Para mostrar notificaciones y alertas interactivas en el sitio
+
+---
+
+## 📁 Estructura del repositorio
+
+- `index.html` → Página principal con menú y carrito  
+- `order.html` → Página de resumen de la orden final  
+- `styles.css` → Archivos de estilos del proyecto  
+- `app.js` → Lógica principal para menú y carrito  
+- `order.js` → Lógica para mostrar la orden final  
+
+---
+
+## 💻 Instalación y uso
+
+Para ejecutar el proyecto localmente:  
+
+```bash
+# Clonar el repositorio
+git clone <URL_DEL_REPOSITORIO>
+
+# Entrar en la carpeta del proyecto
+cd beanywood-cafe
+
+> ⚠️ Nota: Todas las librerías utilizadas (como SweetAlert2) se cargan desde CDN, por lo que **no es necesario ejecutar `npm install`** para usar el proyecto.
+
+---
+
+## 🌐 Demo
+
+Podés ver una **demo funcional del proyecto** en:  
+[https://macadealessandre.github.io/SimuladorCafeteria2/](https://macadealessandre.github.io/SimuladorCafeteria2/)
 
 ---
 
 ## 🚧 Estado del proyecto
 
-El proyecto está **funcional**, pero sigue siendo un simulador. Algunas mejoras futuras podrían incluir:  
-
-- Registro de usuario y login  
-- Ingreso de dirección de envío  
-- Integración con métodos de pago  
-- Validaciones más complejas y manejo de stock  
+- Funcional como **simulador de pedidos**, con manejo de carrito y resumen de compra.  
+- Mejoras futuras posibles:  
+  - Registro de usuario y Login  
+  - Ingreso de dirección de envío  
+  - Integración con métodos de pago  
+  - Validaciones más complejas y manejo de stock  
 
 ---
 
 ## 🙋‍♀️ Autora
 
 **Macarena De Alessandre**  
-Proyecto realizado para la segunda pre-entrega del curso **Javascript en Coderhouse** – 2025.
+Proyecto final del curso **Javascript en Coderhouse** – 2025

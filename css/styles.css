@@ -11,44 +11,88 @@ body {
 }
 
 h1 {
-    color: #300c09;
-    background-color: #fffaed;
+    color: #fffaed;
     text-align: center;
+    margin: 0 auto;
     padding: 20px;
-    margin-bottom: 42px;
 }
 
 h2 {
+    font-size: 37px;
     color: #300c09;
     text-align: center;
-    margin-bottom: 42px;
 }
 
 h3 {
     font-size: 20px;
     color: #753f37;
-    margin-bottom: 38px;
+    margin-bottom: 50px;
+}
+
+/* NAVBAR */
+nav {
+    background-color: #300c09;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 110px;
+    padding: 11px;
+}
+
+nav img {
+    /* margin-right: auto; */ /* empuja todo lo demás hacia la derecha */
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #fffaed;
+    border-radius: 100%;
+    padding: 3px;
+    margin-left: 25px;
 }
 
 /* INDEX */
-.coffeeProducts {
+.hero-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 25px;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    z-index: 0;
+    padding: 40px;
+    margin-top: 0;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    height: 300px;
+    background-image: url('../assets/hero-section-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3; 
+    z-index: -1;
+}
+
+.products {
+    padding: 40px 40px 0 40px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
 }
 
 #coffeeList {
     color: #fffaed;
     display: flex;
     margin-bottom: 15px;
-}
-
-.foodProducts {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 25px;    
 }
 
 #foodList {
@@ -69,6 +113,12 @@ h3 {
     width: 280px;
     margin-bottom: 25px;
     border-radius: 0.7em;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 15px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.productInfo:hover {
+    transform: translateY(-10px) scale(1.03);
 }
 
 .productImage {
@@ -77,8 +127,12 @@ h3 {
 }
 
 .infoProduct {
-    background-color: #753f37;
-    /* max-width: 200px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #300c09;
+    color: 300c09;
+    background-color: #fffaed;
     padding: 20px;
 }
 
@@ -97,11 +151,13 @@ h3 {
     padding: 10px 15px;
     border-style: none;
     border-radius: 0.6em;
-    margin-bottom: 35px;    
+    margin-bottom: 35px;
+    transition: 0.2s ease-in;    
 }
 
 .btnAddToCart:hover {
     background-color: #300c09;
+    transform: scale(0.99)
 }
 
 .errorMessage {
@@ -110,11 +166,11 @@ h3 {
     margin-bottom: 15px;
 }
 
-.cart{
+#productsContainer {
     color: #300c09;
     background-color: #fffaed;
     padding: 20px;
-    margin-bottom: 5px;
+    margin-top: 0px;
 }
 
 #cartSummaryText {
@@ -128,7 +184,7 @@ h3 {
     margin: 10px 0;
 }
 
-#newAddedItem {
+.newAddedItem {
     padding: 10px 0;
 }
 
@@ -143,15 +199,27 @@ h3 {
     border-style: none;
     border-radius: 0.6em;
     margin: 15px 0;
+    transition: 0.2s ease-in;  
 }
 
-#deleteButton {
+#finishOrderButton:hover {
+    background-color: #3c0905;
+    transform: scale(0.99);
+}
+
+.deleteButton {
     color: #fffaed;
     background-color: #753f37;
     padding: 10px 15px;
     border-style: none;
     border-radius: 0.6em;
     margin: 0 10px;
+    transition: 0.2s ease-in;  
+}
+
+.deleteButton:hover {
+    background-color: #300c09;
+    transform: scale(0.99);
 }
 
 /* ORDER */
@@ -159,14 +227,14 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px 20px;
+    margin-top: 40px;
 }
 
 .orderDetail p {
     font-weight: bold;
     color: #300c09;
     font-size: 20px;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 #finalOrder {
@@ -174,11 +242,13 @@ h3 {
 }
 
 #orderedItems {
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 #totalPaid {
     font-size: 16px;
+    padding: 15px 0;
+    margin-bottom: 20px;
 }
 
 #backToHomepage {
@@ -188,4 +258,10 @@ h3 {
     border-style: none;
     border-radius: 0.6em;
     margin: 15px 0;
+    transition: 0.2s ease-in;
+}
+
+#backToHomepage:hover {
+    background-color: #3c0905;
+    transform: scale(0.99);
 }
