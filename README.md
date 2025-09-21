@@ -51,7 +51,7 @@ Para ejecutar el proyecto localmente:
 git clone <https://github.com/MacaDeAlessandre/SimuladorCafeteria2.git>
 ```
 
-# Entrar en la carpeta del proyecto
+Entrar en la carpeta del proyecto
 ```
 cd beanywood-cafe
 ```
